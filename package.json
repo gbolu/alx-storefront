@@ -17,7 +17,7 @@
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "start": "npm run build && node build/server.js",
     "test": "yarn build && jasmine",
-    "watch": "rimraf ./build && npx tsc -w"
+    "watch": "rimraf ./build && tsc-watch --onSuccess \"node ./build/server.js\""
   },
   "devDependencies": {
     "@types/dotenv-safe": "^8.1.2",
@@ -25,6 +25,7 @@
     "@types/jasmine": "^4.3.1",
     "@types/morgan": "^1.9.3",
     "@types/node": "^18.11.17",
+    "@types/pg": "^8.6.6",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",
@@ -41,6 +42,7 @@
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.0",
     "typescript": "^4.9.4"
   },
   "dependencies": {
@@ -50,6 +52,7 @@
     "jasmine-spec-reporter": "^7.0.0",
     "joi": "^17.7.0",
     "morgan": "^1.10.0",
+    "pg": "^8.8.0",
     "pino-http": "^8.3.0",
     "supertest": "^6.3.3",
     "winston": "^3.8.2"
